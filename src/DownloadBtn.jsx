@@ -38,7 +38,7 @@ function DownloadBtn({ type, language, link, subtitleName }) {
     setPressed(true); // Set pressed state to true
     try {
       const response = await axios.post(
-        "http://localhost:5002/download-translate",
+        "subtitle-world-production.up.railway.app/download-translate",
         {
           downloadLink: link,
           targetLanguage: language,
