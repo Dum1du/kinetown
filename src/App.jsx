@@ -14,8 +14,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { IconButton } from "@mui/material";
 
 const OMDB_URL = "https://www.omdbapi.com/";
-const OMBD_apiKey = "b017cfb9";
-const TMDB_apiKey = "036f15d54c96982f54ea198a88d6879d";
+const OMBD_apiKey = import.meta.env.VITE_OMBD_API;
+const TMDB_apiKey = import.meta.env.VITE_TMDB_API;
 const TMDB_URL = "https://api.themoviedb.org/3/movie/now_playing";
 const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
