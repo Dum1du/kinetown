@@ -130,7 +130,7 @@ export default function SubtitleSearch() {
     try {
       // Step 1: Fetch from your backend
       const response = await axios.get(
-        "subtitle-world-production.up.railway.app/search",
+        "https://subtitle-world-production.up.railway.app/search",
         {
           params: { query },
         }
