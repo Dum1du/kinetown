@@ -3,11 +3,20 @@ import axios from "axios";
 import "./App.css";
 import { SpiningLoadingSmall } from "./SpiningLoading";
 
-function DownloadBtn({ type, language, link, subtitleName }) {
+function DownloadBtn({
+  type,
+  language,
+  link,
+  subtitleName,
+  isActive,
+  onSelect,
+}) {
   const [pressed, setPressed] = useState(false);
   const [statusText, setStatusText] = useState("");
 
   useEffect(() => {
+    onSelect(pressed);
+
     let time1, time2, time3;
     if (pressed) {
       time1 = setTimeout(() => {
@@ -34,11 +43,12 @@ function DownloadBtn({ type, language, link, subtitleName }) {
 
   const handleDownload = async (link) => {
     console.log("Download Link:", link); // Debugging log
-    console.log("Selected Language:", language); // Debugging
+    console.log("Selected Language:", language); //
     setPressed(true); // Set pressed state to true
     try {
       const response = await axios.post(
-        "https://subtitle-world-production.up.railway.app/download-translate",
+        "https://subtitle-world-production.up.railway.app/download-translate", //production
+        // "http://localhost:5002/download-translate",
         {
           downloadLink: link,
           targetLanguage: language,
@@ -62,30 +72,34 @@ function DownloadBtn({ type, language, link, subtitleName }) {
     }
   };
 
-  return (
-    <div>
-      <button
-        key={type}
-        onClick={() => handleDownload(link)}
-        disabled={pressed}
-        className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:bg-gray-600 
+  {
+    return (
+      <div style={{ display: isActive ? "block" : "none" }}>
+        <button
+          key={type}
+          onClick={() => {
+            handleDownload(link);
+          }}
+          disabled={pressed}
+          className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:bg-gray-600 
         disabled:cursor-not-allowed disabled:py-2.5 disabled:px-13 disabled:opacity-75"
-      >
-        {pressed ? (
-          <SpiningLoadingSmall />
-        ) : type === "openSub" ? (
-          `Download (${language})`
-        ) : (
-          `Download ${type} (${language})`
+        >
+          {pressed ? (
+            <SpiningLoadingSmall />
+          ) : type === "openSub" ? (
+            `Download (${language})`
+          ) : (
+            `Download ${type} (${language})`
+          )}
+        </button>
+        {pressed && (
+          <div className="mt-2 text-gray-200 text-sm animate-pulse">
+            {statusText}
+          </div>
         )}
-      </button>
-      {pressed && (
-        <div className="mt-2 text-gray-200 text-sm animate-pulse">
-          {statusText}
-        </div>
-      )}
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default DownloadBtn;

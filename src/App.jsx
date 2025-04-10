@@ -37,6 +37,7 @@ export default function SubtitleSearch() {
   const [poster, setPostter] = useState(null);
   const [resultLoadig, setResultLoading] = useState(false);
   const [downloadType, setDownloadType] = useState(null);
+  const [activeBtn, setActiveBtn] = useState(null);
 
   //recent movies
   const [recentMovie, setRecentMovie] = useState([]);
@@ -130,7 +131,8 @@ export default function SubtitleSearch() {
     try {
       // Step 1: Fetch from your backend
       const response = await axios.get(
-        "https://subtitle-world-production.up.railway.app/search",
+        "https://subtitle-world-production.up.railway.app/search", //production
+        // "http://localhost:5002/search",
         {
           params: { query },
         }
@@ -327,7 +329,7 @@ export default function SubtitleSearch() {
                   className="mt-1 block items-center w-50 dark:text-white dark:bg-backgroundColor border border-gray-300 p-2 rounded-md"
                 >
                   <option value="si">Sinhala</option>
-                  <option value="en">Englis</option>
+                  <option value="en">English</option>
                   {/* Add other languages as needed */}
                 </select>
               </div>
@@ -339,6 +341,7 @@ export default function SubtitleSearch() {
                     console.warn("Invalid link format:", link);
                     return null;
                   }
+
                   return (
                     <DownloadBtn
                       key={`${type}-${link}`}
@@ -346,6 +349,14 @@ export default function SubtitleSearch() {
                       language={language}
                       link={link}
                       subtitleName={subtitleName}
+                      isActive={!activeBtn || activeBtn === type}
+                      onSelect={(isPressed) => {
+                        if (isPressed) {
+                          setActiveBtn(type);
+                        } else {
+                          setActiveBtn(null);
+                        }
+                      }}
                     />
                   );
                 })}
