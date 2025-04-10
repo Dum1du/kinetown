@@ -8,7 +8,7 @@ function PirateBtn({ link }) {
     <div>
       <button
         onClick={() => gotoPirate(link)}
-        className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+        className="mt-2 px-4 py-2 bg-[#3A7CA5] text-white rounded-lg hover:bg-[#3a7ca5ab]"
       >
         Go to Download Page
       </button>

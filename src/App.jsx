@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "@fontsource/playfair-display";
-import logo from "./assets/logo-latest.jpg";
+import logo from "./assets/cowboyLogoTXT.png";
 import "./App.css";
 import DownloadBtn from "./DownloadBtn";
 import { SpiningLoadingSmall, SpiningLoadingNormal } from "./SpiningLoading";
@@ -131,8 +131,8 @@ export default function SubtitleSearch() {
     try {
       // Step 1: Fetch from your backend
       const response = await axios.get(
-        "https://subtitle-world-production.up.railway.app/search", //production
-        // "http://localhost:5002/search",
+        // "https://subtitle-world-production.up.railway.app/search", //production
+        "http://localhost:5002/search",
         {
           params: { query },
         }
@@ -204,12 +204,12 @@ export default function SubtitleSearch() {
 
   return (
     <div className="flex flex-col min-h-screen w-auto ">
-      <div className="flex-25  selection:bg-cyan-200 pt-2  px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10">
-        <nav className=" h-13 w-auto sm:px-[35%] mt-2  sm:w-[100%] border-b-2 border-blue-500 mb-2 ">
-          <img src={logo} />
+      <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10">
+        <nav className=" h-13  sm:absolute sm:w-[100%] border-b-2 border-[#E4B165] mb-2 bg-[#4B2E2B] w-screen flex items-center justify-center">
+          <img src={logo} className="h-10" />
         </nav>
 
-        <div className="z-1 h-55 flex slideshow mt-4 w-full max-w-2xl mx-auto overflow-hidden sm:max-w-[100%] sm:w-screen sm:h-55">
+        <div className="z-1 h-55 flex slideshow mt-4 sm:mt-20 w-full max-w-2xl mx-auto overflow-hidden sm:max-w-[100%] sm:w-screen sm:h-55">
           {loadingRecent ? (
             <p className="dark:text-white">Loading movies...</p>
           ) : (
@@ -221,8 +221,8 @@ export default function SubtitleSearch() {
                   alt={movie.title}
                   onClick={() => slideItemClick(movie)}
                   className="rounded-2xl mx-2 sm:h-[50%] 
-                hover:h-[52%] hover:border-2 hover:border-b-cyan-600 
-                hover:border-x-cyan-300 hover:border-t-white dark:hover:border-t-backgroundColor cursor-pointer"
+                hover:h-[52%] hover:border-2 hover:border-b-[#e4b165] 
+                hover:border-x-[#cde465] hover:border-t-white dark:hover:border-t-backgroundColor cursor-pointer"
                 />
               ))}
             </div>
@@ -236,13 +236,13 @@ export default function SubtitleSearch() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Enter movie title and year"
-              className="flex-1 p-2 border w-2xs  border-blue-500 border-y-2 rounded-l-lg bg-white"
+              className="flex-1 p-2 border w-2xs  border-[#4B2E2B] border-y-2 rounded-l-lg bg-white"
             />
             <button
               onClick={handleSearch}
               type="submit"
               disabled={resultLoadig}
-              className=" disabled:bg-gray-700 disabled:text-[14px] disabled:cursor-not-allowed px-4 py-2.5 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 border-0 h-11 w-22"
+              className=" disabled:bg-gray-700 disabled:text-[14px] disabled:cursor-not-allowed px-4 py-2.5 bg-[#4B2E2B] text-[#E4B165] rounded-r-lg hover:bg-[#382320]  border-0 h-11 w-22"
             >
               {resultLoadig ? "Searching" : "Search"}
             </button>
@@ -277,14 +277,14 @@ export default function SubtitleSearch() {
           downloadLinks &&
           typeof downloadLinks === "object" &&
           Object.keys(downloadLinks).length > 0 && (
-            <div className="mt-20 flex flex-col items-center text-center relative ">
+            <div className="mt-25 flex flex-col items-center text-center relative ">
               <h2 className="text-lg dark:text-white font-semibold">
                 {subtitleName}
               </h2>
               <img
                 src={poster}
                 alt="Poster could't find"
-                className="h-100 w-67 my-2 rounded-2xl dark:border-indigo-600 border-4 dark:text-gray-400"
+                className="h-100 w-67 my-2 rounded-2xl dark:border-[#E4B165] border-4 dark:text-gray-400"
               />
 
               <div className="sm:flex sm:gap-2 sm:flex-wrap">
@@ -305,14 +305,14 @@ export default function SubtitleSearch() {
           downloadLinks &&
           typeof downloadLinks === "object" &&
           Object.keys(downloadLinks).length > 0 && (
-            <div className="mt-20 flex flex-col items-center text-center relative">
+            <div className="mt-25 flex flex-col items-center text-center relative">
               <h2 className="text-lg dark:text-white font-semibold">
                 {subtitleName}
               </h2>
               <img
                 src={poster}
                 alt="Poster could't find"
-                className="h-100 w-67 my-2 rounded-2xl dark:border-indigo-600 border-4 dark:text-gray-400"
+                className="h-100 w-67 my-2 rounded-2xl border-[#E4B165] border-4 dark:text-gray-400"
               />
               {/* Language selector */}
               <div className="mb-4 flex flex-col items-center ">
@@ -368,16 +368,16 @@ export default function SubtitleSearch() {
           downloadLinks &&
           typeof downloadLinks === "object" &&
           Object.keys(downloadLinks).length > 0 && (
-            <p className="dark:text-white mt-5 text-center relative">
+            <p className="dark:text-[#D3C6B8] mt-5 text-center relative">
               Recommend to download the suitable file for your video file type
             </p>
           )}
       </div>
       <div className="flex-0.5 footer flex  flex-col sm:flex-row">
-        <footer className="bg-neutral-900 h-fit w-auto py-2 px-4 sm:px-2">
+        <footer className="bg-[#4B2E2B] h-fit w-auto py-2 px-4 sm:px-2">
           <div className="flex flex-col sm:flex-row sm:mb-4">
             <div className="disclaimer flex-2 ">
-              <h2 className="text-red-500 text-center sm:text-2xl">Note!</h2>
+              <h2 className="text-[#E4B165] text-center sm:text-2xl">Note!</h2>
               <p className="text-white text-center sm:mb-4">
                 "Subtitles are aggregated from external sources and enhanced
                 through automated translation. While optimized for accuracy,
@@ -385,12 +385,12 @@ export default function SubtitleSearch() {
                 definitive."
               </p>
             </div>
-            <hr className="bg-gray-400 mx-5 my-3 h-0.5" />
+            <hr className="bg-[#E4B165] mx-5 my-3 h-0.5" />
             <div className="contact flex-1">
               <h2 className="text-gray-300 text-center mt-2  text-[14px]">
                 Meet the Developer :
               </h2>
-              <div className="icons mb-3 flex  items-center justify-evenly mx-15 sm:border-l-1 sm:pl-5 sm:border-gray-400">
+              <div className="icons mb-3 flex  items-center justify-evenly mx-15 sm:border-l-1 sm:pl-5 sm:border-[#E4B165]">
                 <IconButton onClick={handleMailClick}>
                   <MailOutlineIcon className="text-amber-50" />
                 </IconButton>

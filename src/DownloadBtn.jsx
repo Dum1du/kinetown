@@ -47,8 +47,8 @@ function DownloadBtn({
     setPressed(true); // Set pressed state to true
     try {
       const response = await axios.post(
-        "https://subtitle-world-production.up.railway.app/download-translate", //production
-        // "http://localhost:5002/download-translate",
+        // "https://subtitle-world-production.up.railway.app/download-translate", //production
+        "http://localhost:5002/download-translate",
         {
           downloadLink: link,
           targetLanguage: language,
@@ -81,7 +81,7 @@ function DownloadBtn({
             handleDownload(link);
           }}
           disabled={pressed}
-          className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 disabled:bg-gray-600 
+          className="mt-2 px-4 py-2 bg-[#3A7CA5] text-white rounded-lg hover:bg-[#3a7ca5ab] disabled:bg-gray-600 
         disabled:cursor-not-allowed disabled:py-2.5 disabled:px-13 disabled:opacity-75"
         >
           {pressed ? (

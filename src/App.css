@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-backgroundColor: #1e1c33;
+  --color-backgroundColor: #1c1c1c;
 }
 .MuiSvgIcon-root:hover {
-  color: #3091e0;
+  color: #e4b165;
   height: 30px;
   width: 30px;
   transition: all 0.3s ease-in-out;
@@ -27,10 +27,10 @@ h1 {
   width: 5px;
 }
 .scrollBar::-webkit-scrollbar-thumb {
-  background-color: rgb(58, 173, 250);
+  background-color: #e4b165;
 }
 .scrollBar::-webkit-scrollbar-track {
-  background-color: rgb(1, 31, 70);
+  background-color: #4b2e2b;
 }
 .poster {
   animation: slide 20s linear infinite;
