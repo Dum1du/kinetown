@@ -213,7 +213,7 @@ export default function SubtitleSearch() {
           {loadingRecent ? (
             <p className="dark:text-white">Loading movies...</p>
           ) : (
-            <div className="poster flex  sm:max-w-[100%] sm:w-screen sm:h-100">
+            <div className="poster flex   sm:max-w-[100%] sm:w-screen sm:h-100">
               {recentMovie.map((movie) => (
                 <img
                   key={movie.id}

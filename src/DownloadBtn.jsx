@@ -68,6 +68,7 @@ function DownloadBtn({
       setPressed(false); // Reset pressed state after download
     } catch (err) {
       console.error("Download Error:", err);
+      alert("Server is busy, Try again in few minutes.");
       setPressed(false); // Reset pressed state on error
     }
   };
