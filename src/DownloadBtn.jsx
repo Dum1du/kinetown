@@ -20,7 +20,9 @@ function DownloadBtn({
     let time1, time2, time3;
     if (pressed) {
       time1 = setTimeout(() => {
-        setStatusText("This will take up to 1-2 minutes.");
+        setStatusText(
+          "This is my first time doing this, so bear with me—just need about a minute!"
+        );
       }, 5000);
 
       time2 = setTimeout(() => {
@@ -42,8 +44,8 @@ function DownloadBtn({
   }, [pressed]);
 
   const handleDownload = async (link) => {
-    console.log("Download Link:", link); // Debugging log
-    console.log("Selected Language:", language); //
+    // console.log("Download Link:", link); // Debugging log
+    // console.log("Selected Language:", language); //
     setPressed(true); // Set pressed state to true
     try {
       const response = await axios.post(
@@ -67,7 +69,7 @@ function DownloadBtn({
 
       setPressed(false); // Reset pressed state after download
     } catch (err) {
-      console.error("Download Error:", err);
+      // console.error("Download Error:", err);
       alert("Server is busy, Try again in few minutes.");
       setPressed(false); // Reset pressed state on error
     }

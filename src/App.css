@@ -22,6 +22,18 @@
   text-align: center;
   text-shadow: 2px 2px 0 #00000022, 4px 4px 0 #00000011;
 }
+.holdText {
+  font-family: "Rubik Dirt";
+  color: #9b0808;
+  letter-spacing: 4px;
+  text-align: center;
+  text-shadow: 2px 2px 0 #00000022, 4px 4px 0 #00000011;
+}
+.lodingPos {
+  background-image: url(./assets/poster-bg.png);
+  background-position: center;
+  background-size: 90% 94%;
+}
 body {
   margin: 0;
   padding: 0;

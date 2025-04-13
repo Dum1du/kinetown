@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
 
 function MovieSkel() {
   const [showtext, setShowText] = useState(false);
@@ -14,7 +15,7 @@ function MovieSkel() {
     <div className="mt-20 flex flex-col items-center text-center ">
       <div className="flex flex-col items-center blur-sm opacity-50 relative">
         <div className="h-4 w-20 bg-gray-200 animate-pulse"></div>
-        <div className="h-100 w-75 my-2 bg-gray-200 animate-pulse rounded-2xl"></div>
+        <div className="h-100 w-75 my-2 lodingPos animate-pulse rounded-2xl"></div>
         {/* Language selector */}
         <div className="mb-4 flex flex-col items-center ">
           <div className="block h-4 bg-gray-200 w-20 animate-pulse"></div>
@@ -25,9 +26,9 @@ function MovieSkel() {
           <div className="bg-gray-200 w-35 h-7 rounded-2xl animate-pulse"></div>
         </div>
       </div>
-      <div className="animate-pulse mt-30 flex items-center absolute">
+      <div className="animate-pulse mt-50 w-50 flex items-center absolute">
         {showtext && (
-          <h3 className="font-rubikDirt text-2xl font-bold text-[#e4b165]">
+          <h3 className="holdText text-2xl  text-[#e4b165]">
             Hold yer horses!
           </h3>
         )}

@@ -88,10 +88,10 @@ export default function SubtitleSearch() {
 
   //slideshow
   useEffect(() => {
-    console.log("slideshow use effect started");
+    // console.log("slideshow use effect started");
     const fetchRecentMovies = async () => {
       setLoadingRecent(true);
-      console.log("started to load recents");
+      // console.log("started to load recents");
       try {
         const tmbdres = await axios.get(TMDB_URL, {
           params: {
@@ -101,9 +101,9 @@ export default function SubtitleSearch() {
           },
         });
         setRecentMovie(tmbdres.data.results);
-        console.log("Results got", tmbdres.data.results);
+        // console.log("Results got", tmbdres.data.results);
       } catch (error) {
-        console.log("Error showing movies ", error);
+        // console.log("Error showing movies ", error);
       } finally {
         setLoadingRecent(false);
       }
@@ -133,8 +133,8 @@ export default function SubtitleSearch() {
     try {
       // Step 1: Fetch from your backend
       const response = await axios.get(
-        "https://subtitle-world-production.up.railway.app/search", //production
-        // "http://localhost:5002/search",
+        // "https://subtitle-world-production.up.railway.app/search", //production
+        "http://localhost:5002/search",
         {
           params: { query },
         }
@@ -142,21 +142,21 @@ export default function SubtitleSearch() {
 
       await fetchMoviePoster(query);
       setQuery("");
-      console.log("API Response:", response.data);
+      // console.log("API Response:", response.data);
 
       // Step 2: Update state
       setSubtitleName(response.data.subtitleName || "");
       setDownloadLinks(response.data.downloads || {});
       setDownloadType(response.data.type);
 
-      console.log("State After Update (Incorrect):", {
-        subtitleName,
-        downloadLinks,
-      }); // Debugging log
+      // console.log("State After Update (Incorrect):", {
+      //   subtitleName,
+      //   downloadLinks,
+      // }); // Debugging log
 
       setError(null);
     } catch (err) {
-      console.error("Search Error:", err);
+      // console.error("Search Error:", err);
       setError("No subtitles found");
       setSubtitleName("");
       setDownloadLinks({});
@@ -195,11 +195,11 @@ export default function SubtitleSearch() {
         const posterUrl = `${TMDB_IMAGE_URL}${data.results[0].poster_path}`;
         setPostter(posterUrl);
       } else {
-        console.log("Movie not found on TMDB");
+        // console.log("Movie not found on TMDB");
         setPostter(null);
       }
     } catch (err) {
-      console.error("TMDB Poster Fetch Error:", err);
+      // console.error("TMDB Poster Fetch Error:", err);
       setPostter(null);
     }
   };
@@ -232,7 +232,12 @@ export default function SubtitleSearch() {
         </div>
 
         <div className="z-1 searchField h-45  mt-80 items-center flex flex-col absolute">
-          <div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSearch();
+            }}
+          >
             <input
               type="text"
               value={query}
@@ -241,14 +246,13 @@ export default function SubtitleSearch() {
               className="flex-1 p-2 border w-2xs  border-[#4B2E2B] border-y-2 rounded-l-lg bg-white"
             />
             <button
-              onClick={handleSearch}
               type="submit"
               disabled={resultLoadig}
               className=" disabled:bg-gray-700 disabled:text-[14px] disabled:cursor-not-allowed px-4 py-2.5 bg-[#4B2E2B] text-[#E4B165] rounded-r-lg hover:bg-[#382320]  border-0 h-11 w-22"
             >
               {resultLoadig ? "Searching" : "Search"}
             </button>
-          </div>
+          </form>
           <div>
             {error && <h3 className="text-red-700">{error}</h3>}
             {loading && (
@@ -291,7 +295,7 @@ export default function SubtitleSearch() {
 
               <div className="sm:flex sm:gap-2 sm:flex-wrap">
                 {Object.entries(downloadLinks).map(([type, link]) => {
-                  console.log("Rendering button for:", type, link); // Debugging log
+                  // console.log("Rendering button for:", type, link); // Debugging log
 
                   return <DriveBtn subtitleName={subtitleName} fileId={link} />;
                 })}
@@ -316,9 +320,9 @@ export default function SubtitleSearch() {
 
               <div className="sm:flex sm:gap-2 sm:flex-wrap">
                 {Object.entries(downloadLinks).map(([type, link]) => {
-                  console.log("Rendering button for:", type, link); // Debugging log
+                  // console.log("Rendering button for:", type, link); // Debugging log
                   if (typeof link !== "string" || !link.startsWith("http")) {
-                    console.warn("Invalid link format:", link);
+                    // console.warn("Invalid link format:", link);
                     return null;
                   }
                   return <PirateBtn link={link} />;
@@ -363,9 +367,9 @@ export default function SubtitleSearch() {
 
               <div className="sm:flex sm:gap-2 sm:flex-wrap">
                 {Object.entries(downloadLinks).map(([type, link]) => {
-                  console.log("Rendering button for:", type, link); // Debugging log
+                  // console.log("Rendering button for:", type, link); // Debugging log
                   if (typeof link !== "string" || !link.startsWith("http")) {
-                    console.warn("Invalid link format:", link);
+                    // console.warn("Invalid link format:", link);
                     return null;
                   }
 
