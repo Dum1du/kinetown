@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @theme {
   --color-backgroundColor: #1c1c1c;
 }
@@ -8,6 +7,20 @@
   height: 30px;
   width: 30px;
   transition: all 0.3s ease-in-out;
+}
+.poster-back {
+  background-image: url("./assets/poster-bg.png");
+  background-position: center;
+  background-size: 90% 94%;
+  background-repeat: no-repeat;
+  padding-bottom: 25px;
+}
+.title {
+  font-family: "Rubik Dirt";
+  color: #9b0808;
+  letter-spacing: 4px;
+  text-align: center;
+  text-shadow: 2px 2px 0 #00000022, 4px 4px 0 #00000011;
 }
 body {
   margin: 0;

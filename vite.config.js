@@ -8,5 +8,16 @@ dotenv.config({ path: "./api.env" });
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss({
+      theme: {
+        extend: {
+          fontFamily: {
+            rubikDirt: ['"Rubik Dirt"', "cursive"],
+          },
+        },
+      },
+    }),
+  ],
 });

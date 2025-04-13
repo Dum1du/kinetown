@@ -14,6 +14,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fontsource/playfair-display": "^5.2.5",
+    "@fontsource/rubik-dirt": "^5.2.5",
     "@mui/icons-material": "^7.0.1",
     "@mui/material": "^7.0.1",
     "@tailwindcss/vite": "^4.0.15",

@@ -12,6 +12,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { IconButton } from "@mui/material";
+import DriveBtn from "./DriveBtn";
+import "@fontsource/rubik-dirt";
 
 const OMDB_URL = "https://www.omdbapi.com/";
 const OMBD_apiKey = import.meta.env.VITE_OMBD_API;
@@ -22,7 +24,7 @@ const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 export default function SubtitleSearch() {
   //mail things
   const email = "dumidu.prabashana01@gmail.com";
-  const subject = "moviezone.free.nf - idea about the app";
+  const subject = "KineTown.pages - idea about the app";
   const body =
     "Hello,\n\nI have an idea for the app...\n\nBest regards,\n[Your Name]";
 
@@ -271,6 +273,31 @@ export default function SubtitleSearch() {
         </div>
 
         {resultLoadig && <MovieSkel />}
+        {/* Drive button */}
+        {downloadType === "drive" &&
+          !resultLoadig &&
+          downloadLinks &&
+          typeof downloadLinks === "object" &&
+          Object.keys(downloadLinks).length > 0 && (
+            <div className="mt-25 flex flex-col items-center text-center relative ">
+              <div className="poster-back flex flex-col items-center w-fit px-10">
+                <h2 className="text-3xl pt-10 title w-69">{subtitleName}</h2>
+                <img
+                  src={poster}
+                  alt="Poster could't find"
+                  className="h-100 w-67 my-2 rounded-2xl  dark:text-gray-400"
+                />
+              </div>
+
+              <div className="sm:flex sm:gap-2 sm:flex-wrap">
+                {Object.entries(downloadLinks).map(([type, link]) => {
+                  console.log("Rendering button for:", type, link); // Debugging log
+
+                  return <DriveBtn subtitleName={subtitleName} fileId={link} />;
+                })}
+              </div>
+            </div>
+          )}
         {/* pirate download */}
         {downloadType === "pirate" &&
           !resultLoadig &&
@@ -278,14 +305,14 @@ export default function SubtitleSearch() {
           typeof downloadLinks === "object" &&
           Object.keys(downloadLinks).length > 0 && (
             <div className="mt-25 flex flex-col items-center text-center relative ">
-              <h2 className="text-lg dark:text-white font-semibold">
-                {subtitleName}
-              </h2>
-              <img
-                src={poster}
-                alt="Poster could't find"
-                className="h-100 w-67 my-2 rounded-2xl dark:border-[#E4B165] border-4 dark:text-gray-400"
-              />
+              <div className="poster-back flex flex-col items-center w-fit px-10">
+                <h2 className="text-2xl pt-10 title w-69">{subtitleName}</h2>
+                <img
+                  src={poster}
+                  alt="Poster could't find"
+                  className="h-100 w-67 my-2 rounded-2xl  dark:text-gray-400"
+                />
+              </div>
 
               <div className="sm:flex sm:gap-2 sm:flex-wrap">
                 {Object.entries(downloadLinks).map(([type, link]) => {
@@ -306,14 +333,14 @@ export default function SubtitleSearch() {
           typeof downloadLinks === "object" &&
           Object.keys(downloadLinks).length > 0 && (
             <div className="mt-25 flex flex-col items-center text-center relative">
-              <h2 className="text-lg dark:text-white font-semibold">
-                {subtitleName}
-              </h2>
-              <img
-                src={poster}
-                alt="Poster could't find"
-                className="h-100 w-67 my-2 rounded-2xl border-[#E4B165] border-4 dark:text-gray-400"
-              />
+              <div className="poster-back flex flex-col items-center w-fit px-10">
+                <h2 className="text-3xl pt-10 title w-69">{subtitleName}</h2>
+                <img
+                  src={poster}
+                  alt="Poster could't find"
+                  className="h-100 w-67 my-2 rounded-2xl  dark:text-gray-400"
+                />
+              </div>
               {/* Language selector */}
               <div className="mb-4 flex flex-col items-center ">
                 <label
