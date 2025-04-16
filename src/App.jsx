@@ -119,16 +119,17 @@ export default function SubtitleSearch() {
     setQuery(`${movie.title} ${movie.release_date.substring(0, 4)}`);
   };
 
-  const handleSearch = async () => {
+  const handleSearch = async (customQuery) => {
     setSuggestions([]);
-    if (!query) {
+    const searchItem = customQuery || query;
+    if (!searchItem) {
       setError("Please enter a movie title");
       setTimeout(() => setError(null), 700);
       return;
     }
     setResultLoading(true);
 
-    window.scrollBy({ top: 500, behavior: "smooth" });
+    window.scrollBy({ top: 100, behavior: "smooth" });
 
     try {
       // Step 1: Fetch from your backend
@@ -136,11 +137,11 @@ export default function SubtitleSearch() {
         "https://subtitle-world-production.up.railway.app/search", //production
         // "http://localhost:5002/search",
         {
-          params: { query },
+          params: { query: searchItem },
         }
       );
 
-      await fetchMoviePoster(query);
+      await fetchMoviePoster(searchItem);
       setQuery("");
       // console.log("API Response:", response.data);
 
@@ -160,7 +161,7 @@ export default function SubtitleSearch() {
       setError("No subtitles found");
       setSubtitleName("");
       setDownloadLinks({});
-      alert(`Sorry Couldn't find subtitle for : ${query}`);
+      alert(`Sorry Couldn't find subtitle for : ${searchItem}`);
       setQuery("");
 
       setTimeout(() => {
@@ -345,25 +346,6 @@ export default function SubtitleSearch() {
                   className="h-100 w-67 my-2 rounded-2xl  dark:text-gray-400"
                 />
               </div>
-              {/* Language selector */}
-              <div className="mb-4 flex flex-col items-center ">
-                <label
-                  htmlFor="language-selector"
-                  className="block text-sm dark:text-white font-medium"
-                >
-                  Select Language:
-                </label>
-                <select
-                  id="language-selector"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value)}
-                  className="mt-1 block items-center w-50 dark:text-white dark:bg-backgroundColor border border-gray-300 p-2 rounded-md"
-                >
-                  <option value="si">Sinhala</option>
-                  <option value="en">English</option>
-                  {/* Add other languages as needed */}
-                </select>
-              </div>
 
               <div className="sm:flex sm:gap-2 sm:flex-wrap">
                 {Object.entries(downloadLinks).map(([type, link]) => {
@@ -381,6 +363,7 @@ export default function SubtitleSearch() {
                       link={link}
                       subtitleName={subtitleName}
                       isActive={!activeBtn || activeBtn === type}
+                      reload={handleSearch}
                       onSelect={(isPressed) => {
                         if (isPressed) {
                           setActiveBtn(type);

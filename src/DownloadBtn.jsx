@@ -10,6 +10,7 @@ function DownloadBtn({
   subtitleName,
   isActive,
   onSelect,
+  reload,
 }) {
   const [pressed, setPressed] = useState(false);
   const [statusText, setStatusText] = useState("");
@@ -68,7 +69,9 @@ function DownloadBtn({
       a.remove();
 
       setPressed(false); // Reset pressed state after download
-      window.location.reload(); // Reload the page after download
+      if (reload && subtitleName) {
+        reload(subtitleName); // Call reload function if provided
+      }
     } catch (err) {
       // console.error("Download Error:", err);
       alert("Server is busy, Try again in few minutes.");
