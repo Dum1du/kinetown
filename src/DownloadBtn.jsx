@@ -68,6 +68,7 @@ function DownloadBtn({
       a.remove();
 
       setPressed(false); // Reset pressed state after download
+      window.location.reload(); // Reload the page after download
     } catch (err) {
       // console.error("Download Error:", err);
       alert("Server is busy, Try again in few minutes.");
