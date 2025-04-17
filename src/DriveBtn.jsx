@@ -6,7 +6,7 @@ function DriveBtn({ fileId, subtitleName }) {
 
   const handleDownload = async () => {
     // const backendUrl = "http://localhost:5002";
-    const backendUrl = "https://subtitle-world-production.up.railway.app";
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
     console.log("fileID", fileId);
     try {
       setDownloading(true);
