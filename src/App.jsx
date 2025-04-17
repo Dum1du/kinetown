@@ -42,7 +42,7 @@ export default function SubtitleSearch() {
   const [subtitleName, setSubtitleName] = useState("");
   const [downloadLinks, setDownloadLinks] = useState({});
   const [error, setError] = useState(null);
-  const [language, setLanguage] = useState("si");
+  const language = "si";
   const [loading, setLoading] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const [poster, setPostter] = useState(null);
