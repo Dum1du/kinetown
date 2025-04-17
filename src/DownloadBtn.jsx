@@ -3,6 +3,9 @@ import axios from "axios";
 import "./App.css";
 import { SpiningLoadingSmall } from "./SpiningLoading";
 
+const downloadEndPoint = import.meta.env.VITE_DOWNLOAD_ENDPOINT;
+const type03 = import.meta.env.VITE_TYPE_03;
+
 function DownloadBtn({
   type,
   language,
@@ -50,7 +53,7 @@ function DownloadBtn({
     setPressed(true); // Set pressed state to true
     try {
       const response = await axios.post(
-        "https://subtitle-world-production.up.railway.app/download-translate", //productio
+        downloadEndPoint, //production
         // "http://localhost:5002/download-translate",
         {
           downloadLink: link,
@@ -93,7 +96,7 @@ function DownloadBtn({
         >
           {pressed ? (
             <SpiningLoadingSmall />
-          ) : type === "openSub" ? (
+          ) : type === type03 ? (
             `Download (${language})`
           ) : (
             `Download ${type} (${language})`

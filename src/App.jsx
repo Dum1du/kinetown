@@ -18,12 +18,21 @@ import "@fontsource/rubik-dirt";
 const OMDB_URL = "https://www.omdbapi.com/";
 const OMBD_apiKey = import.meta.env.VITE_OMBD_API;
 const TMDB_apiKey = import.meta.env.VITE_TMDB_API;
+const searchEndPoint = import.meta.env.VITE_SEARCH_ENDPOINT;
+const type01 = import.meta.env.VITE_TYPE_01;
+const type02 = import.meta.env.VITE_TYPE_02;
+const type03 = import.meta.env.VITE_TYPE_03;
+const type04 = import.meta.env.VITE_TYPE_04;
+const git = import.meta.env.VITE_GIT;
+const linkedin = import.meta.env.VITE_LINKEDIN;
+const facebook = import.meta.env.VITE_FB;
+
 const TMDB_URL = "https://api.themoviedb.org/3/movie/now_playing";
 const TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
 export default function SubtitleSearch() {
   //mail things
-  const email = "dumidu.prabashana01@gmail.com";
+  const email = import.meta.env.VITE_SEARCH_ENDPOINT;
   const subject = "KineTown.pages - idea about the app";
   const body =
     "Hello,\n\nI have an idea for the app...\n\nBest regards,\n[Your Name]";
@@ -134,7 +143,7 @@ export default function SubtitleSearch() {
     try {
       // Step 1: Fetch from your backend
       const response = await axios.get(
-        "https://subtitle-world-production.up.railway.app/search", //production
+        searchEndPoint, //production
         // "http://localhost:5002/search",
         {
           params: { query: searchItem },
@@ -279,7 +288,7 @@ export default function SubtitleSearch() {
 
         {resultLoadig && <MovieSkel />}
         {/* Drive button */}
-        {downloadType === "drive" &&
+        {downloadType === type01 &&
           !resultLoadig &&
           downloadLinks &&
           typeof downloadLinks === "object" &&
@@ -304,7 +313,7 @@ export default function SubtitleSearch() {
             </div>
           )}
         {/* pirate download */}
-        {downloadType === "pirate" &&
+        {downloadType === type02 &&
           !resultLoadig &&
           downloadLinks &&
           typeof downloadLinks === "object" &&
@@ -333,7 +342,7 @@ export default function SubtitleSearch() {
           )}
         {/* auto download */}
         {!resultLoadig &&
-          (downloadType === "openSub" || downloadType === "subdl") &&
+          (downloadType === type03 || downloadType === type04) &&
           downloadLinks &&
           typeof downloadLinks === "object" &&
           Object.keys(downloadLinks).length > 0 && (
@@ -378,7 +387,7 @@ export default function SubtitleSearch() {
             </div>
           )}
         {!resultLoadig &&
-          downloadType === "subdl" &&
+          downloadType === type04 &&
           downloadLinks &&
           typeof downloadLinks === "object" &&
           Object.keys(downloadLinks).length > 0 && (
@@ -408,19 +417,13 @@ export default function SubtitleSearch() {
                 <IconButton onClick={handleMailClick}>
                   <MailOutlineIcon className="text-amber-50" />
                 </IconButton>
-                <IconButton href="https://github.com/Dum1du" target="_blank">
+                <IconButton href={git} target="_blank">
                   <GitHubIcon className="text-amber-50" />
                 </IconButton>
-                <IconButton
-                  href="https://www.linkedin.com/in/dumidu-prabashana-6bab75286/"
-                  target="_blank"
-                >
+                <IconButton href={linkedin} target="_blank">
                   <LinkedInIcon className="text-amber-50" />
                 </IconButton>
-                <IconButton
-                  href="https://web.facebook.com/dumidu.mahara/"
-                  target="_blank"
-                >
+                <IconButton href={facebook} target="_blank">
                   <FacebookIcon className="text-amber-50" />
                 </IconButton>
               </div>
@@ -428,7 +431,7 @@ export default function SubtitleSearch() {
           </div>
           <div>
             <p className="text-white text-center text-[12px]">
-              © {new Date().getFullYear()} MovieZone. All rights reserved.
+              © {new Date().getFullYear()} KineTown. All rights reserved.
             </p>
           </div>
         </footer>
