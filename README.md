@@ -44,7 +44,6 @@ MIT License
 
 ## 👋 About the Developers
 
-Made with ❤️ by [YourName](https://github.com/Dum1du) 
-![Contributors](https://img.shields.io/github/contributors/Dum1du/kinetown)
+Made with ❤️ by [Dum1du](https://github.com/Dum1du)
 
 Enjoy movies with subtitles the smart way.
