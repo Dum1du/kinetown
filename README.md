@@ -36,12 +36,6 @@ Want to improve the UI or add new sources?
 
 ---
 
-## 📄 License
-
-MIT License
-
----
-
 ## 👋 About the Developers
 
 Made with ❤️ by [Dum1du](https://github.com/Dum1du)
