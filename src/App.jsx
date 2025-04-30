@@ -396,6 +396,8 @@ export default function SubtitleSearch() {
             </p>
           )}
       </div>
+
+      
       <div className="flex-0.5 footer flex  flex-col sm:flex-row">
         <footer className="bg-[#4B2E2B] h-fit w-auto py-2 px-4 sm:px-2">
           <div className="flex flex-col sm:flex-row sm:mb-4">
