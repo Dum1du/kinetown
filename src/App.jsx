@@ -217,7 +217,7 @@ export default function SubtitleSearch() {
   return (
     <div className="flex flex-col min-h-screen w-auto ">
       <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10">
-        <nav className=" h-13  sm:absolute sm:w-[100%] border-b-2 border-[#E4B165] mb-2 bg-[#4B2E2B] w-screen flex items-center justify-center">
+        <nav className=" h-13  sm:absolute sm:w-[100%] border-b-2 border-highlightColor mb-2 bg-mainColor w-screen flex items-center justify-center">
           <img src={logo} className="h-10" />
         </nav>
 
