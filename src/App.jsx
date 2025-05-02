@@ -217,7 +217,10 @@ export default function SubtitleSearch() {
   return (
     <div className="flex flex-col min-h-screen w-auto ">
       <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10">
-        <nav className=" h-13  sm:absolute sm:w-[100%] border-b-2 border-highlightColor mb-2 bg-mainColor w-screen flex items-center justify-center">
+        <nav
+          className=" h-13  sm:absolute sm:w-[100%] border-b-2 border-highlightColor mb-2 bg-mainColor w-screen flex items-left justify-left"
+          ml-20
+        >
           <img src={logo} className="h-10" />
         </nav>
 
@@ -232,8 +235,8 @@ export default function SubtitleSearch() {
                   src={`${TMDB_IMAGE_URL}${movie.poster_path}`}
                   alt={movie.title}
                   onClick={() => slideItemClick(movie)}
-                  className="rounded-2xl mx-2 sm:h-[50%] 
-                hover:h-[52%] hover:border-2 hover:border-b-[#e4b165] 
+                  className="rounded-2xl mx-2 sm:h-[50%]
+                hover:h-[52%] hover:border-2 hover:border-b-[#e4b165]
                 hover:border-x-[#cde465] hover:border-t-white dark:hover:border-t-backgroundColor cursor-pointer"
                 />
               ))}
