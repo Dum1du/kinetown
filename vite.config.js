@@ -1,8 +1,9 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import tailwindcss from "@tailwindcss/vite";
 import dotenv from "dotenv";
 import removeConsole from "vite-plugin-remove-console";
+
 
 // Load api.env manually
 dotenv.config({ path: "./api.env" });
