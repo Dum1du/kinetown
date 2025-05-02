@@ -216,6 +216,7 @@ export default function SubtitleSearch() {
 
   return (
     <div className="flex flex-col min-h-screen w-auto ">
+
       <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10 ">
       <nav className="h-13 sm:absolute sm:w-full border-b-2 border-[#E4B165] mb-2 bg-[#4B2E2B] w-screen flex items-center relative">
   <img src={logo} className="h-10 ml-6 absolute left-4" />
@@ -249,6 +250,8 @@ export default function SubtitleSearch() {
     <li><a href="#" className="hover:text-[#E4B165]">About</a></li>
   </ul>
 </nav>
+    
+
 
         <div className="z-1 h-55 flex slideshow mt-4 sm:mt-20 w-full max-w-2xl mx-auto overflow-hidden sm:max-w-[100%] sm:w-screen sm:h-55">
           {loadingRecent ? (
