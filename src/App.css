@@ -1,5 +1,5 @@
 @import "tailwindcss";
-:root {
+@theme {
   --color-backgroundColor: #1c1c1c;
 }
 .MuiSvgIcon-root:hover {
