@@ -21,6 +21,8 @@
     "@tsparticles/react": "^3.0.0",
     "axios": "^1.8.4",
     "dotenv": "^16.4.7",
+    "lightningcss": "^1.29.3",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-tsparticles": "^2.12.2",
