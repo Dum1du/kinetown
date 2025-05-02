@@ -217,11 +217,23 @@ export default function SubtitleSearch() {
   return (
     <div className="flex flex-col min-h-screen w-auto ">
       <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10">
-        <nav className=" h-13  sm:absolute sm:w-[100%] border-b-2 border-highlightColor mb-2 bg-mainColor w-screen flex items-center justify-left px-5">
+        <nav className=" h-13  sm:absolute sm:w-[100%]  mb-2 bg-mainColor w-screen flex items-center justify-left px-5">
           <img src={logo} className="h-10" />
+          <h2 className="home  px-5 dark:text-white hover:to-black cursor-pointer">
+            Home
+          </h2>
+          <h2 className="categories  px-5 dark:text-white hover:to-black cursor-pointer">
+            Categories
+          </h2>
+          <h2 className="topRated  px-5 dark:text-white hover:to-black cursor-pointer">
+            Top Rated
+          </h2>
+          <h2 className="aboutUs  px-5 dark:text-white hover:to-black cursor-pointer">
+            About Us
+          </h2>
         </nav>
 
-        <div className="z-1 h-55 flex slideshow mt-4 sm:mt-20 w-full max-w-2xl mx-auto overflow-hidden sm:max-w-[100%] sm:w-screen sm:h-55">
+        {/* <div className="z-1 h-55 flex slideshow mt-4 sm:mt-20 w-full max-w-2xl mx-auto overflow-hidden sm:max-w-[100%] sm:w-screen sm:h-55">
           {loadingRecent ? (
             <p className="dark:text-white">Loading movies...</p>
           ) : (
@@ -239,9 +251,9 @@ export default function SubtitleSearch() {
               ))}
             </div>
           )}
-        </div>
+        </div> */}
 
-        <div className="z-1 searchField h-45  mt-80 items-center flex flex-col absolute">
+        <div className="z-1 searchField h-45 w-800 mt-20 items-center flex flex-col">
           <form
             onSubmit={(e) => {
               e.preventDefault();
