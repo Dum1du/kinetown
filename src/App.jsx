@@ -216,24 +216,39 @@ export default function SubtitleSearch() {
 
   return (
     <div className="flex flex-col min-h-screen w-auto ">
-      <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10">
-        <nav className=" h-13  sm:absolute sm:w-[100%] border-b-2 border-[#E4B165] mb-2 bg-[#4B2E2B] w-screen flex items-center justify-left ">
-          <img src={logo} className="h-10 flex space-x-15 ml-15" />
-          <ul className="flex space-x-15 text-white text-sm sm:text-base ml-15">
-            <li>
-              <a href="#" className="hover:text-[#E4B165]">Home</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#E4B165]">Categories</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#E4B165]">Trending</a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-[#E4B165]">About</a>
-            </li>
-          </ul>
-        </nav>
+      <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10 ">
+      <nav className="h-13 sm:absolute sm:w-full border-b-2 border-[#E4B165] mb-2 bg-[#4B2E2B] w-screen flex items-center relative">
+  <img src={logo} className="h-10 ml-6 absolute left-4" />
+
+  <ul className="flex space-x-8 text-white text-sm sm:text-base mx-auto items-center">
+  <li><a href="#" className="hover:text-[#E4B165]">Home</a></li>
+
+    <li className="relative group">
+  <div className="px-4 py-2 hover:text-[#E4B165] cursor-pointer">Categories</div>
+
+  <div className="absolute top-full left-0 bg-[#4B2E2B] text-white rounded shadow-lg z-10 w-40 opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none transition-opacity duration-200">
+    <ul className="flex flex-col">
+      <li>
+        <a href="/category/action" className="block px-4 py-2 hover:bg-[#E4B165] hover:text-black">Action</a>
+      </li>
+      <li>
+        <a href="/category/comedy" className="block px-4 py-2 hover:bg-[#E4B165] hover:text-black">Comedy</a>
+      </li>
+      <li>
+        <a href="/category/drama" className="block px-4 py-2 hover:bg-[#E4B165] hover:text-black">Drama</a>
+      </li>
+      <li>
+        <a href="/category/horror" className="block px-4 py-2 hover:bg-[#E4B165] hover:text-black">Horror</a>
+      </li>
+    </ul>
+  </div>
+</li>
+
+
+<li><a href="#" className="hover:text-[#E4B165]">Trending</a></li>
+    <li><a href="#" className="hover:text-[#E4B165]">About</a></li>
+  </ul>
+</nav>
 
         <div className="z-1 h-55 flex slideshow mt-4 sm:mt-20 w-full max-w-2xl mx-auto overflow-hidden sm:max-w-[100%] sm:w-screen sm:h-55">
           {loadingRecent ? (
