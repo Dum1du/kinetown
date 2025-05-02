@@ -253,7 +253,7 @@ export default function SubtitleSearch() {
           )}
         </div> */}
 
-        <div className="z-1 searchField h-45 w-800 mt-20 items-center flex flex-col">
+        <div className="z-1 searchField h-45 mt-20 items-center flex flex-col">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -265,7 +265,7 @@ export default function SubtitleSearch() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Enter movie title and year"
-              className="flex-1 p-2 border w-2xs  border-[#4B2E2B] border-y-2 rounded-l-lg bg-white"
+              className="flex-1 p-2 border border-[#4B2E2B] border-y-2 rounded-l-lg bg-white w-150"
             />
             <button
               type="submit"
