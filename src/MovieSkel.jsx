@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./pages/Download-Page/App.css";
 
 function MovieSkel() {
   const [showtext, setShowText] = useState(false);

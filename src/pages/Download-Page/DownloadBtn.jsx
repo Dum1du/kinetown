@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-import { SpiningLoadingSmall } from "./SpiningLoading";
+import { SpiningLoadingSmall } from "../../SpiningLoading";
 
 const downloadEndPoint = import.meta.env.VITE_DOWNLOAD_ENDPOINT;
 const type03 = import.meta.env.VITE_TYPE_03;
