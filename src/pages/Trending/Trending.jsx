@@ -1,6 +1,7 @@
 import React from "react";
 import "./Trending.css";
 import NavigationBar from "../../NavigationBar";
+import Footer from "../../footer";
 
 function Trending() {
   return (
@@ -9,6 +10,7 @@ function Trending() {
       <h1 className="flex items-center justify-center h-screen text-9xl text-black">
         Imbd Top-Rated
       </h1>
+      <Footer />
     </div>
   );
 }

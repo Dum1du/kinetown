@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
 import NavigationBar from "../../NavigationBar";
+import Footer from "../../footer";
 
 function About() {
   return (
@@ -9,6 +10,7 @@ function About() {
       <h1 className="flex items-center justify-center h-screen text-9xl text-black">
         About
       </h1>
+      <Footer />
     </div>
   );
 }
