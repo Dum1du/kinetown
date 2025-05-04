@@ -1,6 +1,14 @@
 import React from "react";
 import "./Trending.css";
 import NavigationBar from "../../NavigationBar";
+import axios from "axios";
+
+const API_KEY = "fa0e2bfacce6d94257e6692c20cc2ac7";
+const API_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
+
+function Trending() {
+  const [movies, setMovies] = useState([]);
 
 const movies = [
   {
