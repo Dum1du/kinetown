@@ -4,6 +4,8 @@ import "@fontsource/playfair-display";
 import logo from "../../assets/cowboyLogoTXT.png";
 import "./App.css";
 import DownloadBtn from "./DownloadBtn";
+
+import Footer from "../../footer";
 import {
   SpiningLoadingSmall,
   SpiningLoadingNormal,
@@ -483,53 +485,7 @@ export default function SubtitleSearch() {
           </div>
       
       </div>
-
-    
-      
-
-
-
-      
-      <div className="flex-0.5 footer flex  flex-col sm:flex-row">
-        <footer className="bg-[#4B2E2B] h-fit w-auto py-2 px-4 sm:px-2">
-          <div className="flex flex-col sm:flex-row sm:mb-4">
-            <div className="disclaimer flex-2 ">
-              <h2 className="text-[#E4B165] text-center sm:text-2xl">Note!</h2>
-              <p className="text-white text-center sm:mb-4">
-                "Subtitles are aggregated from external sources and enhanced
-                through automated translation. While optimized for accuracy,
-                they may contain inconsistencies and should not be considered
-                definitive."
-              </p>
-            </div>
-            <hr className="bg-[#E4B165] mx-5 my-3 h-0.5" />
-            <div className="contact flex-1">
-              <h2 className="text-gray-300 text-center mt-2  text-[14px]">
-                Meet the Developer :
-              </h2>
-              <div className="icons mb-3 flex  items-center justify-evenly mx-15 sm:border-l-1 sm:pl-5 sm:border-[#E4B165]">
-                <IconButton onClick={handleMailClick}>
-                  <MailOutlineIcon className="text-amber-50" />
-                </IconButton>
-                <IconButton href={git} target="_blank">
-                  <GitHubIcon className="text-amber-50" />
-                </IconButton>
-                <IconButton href={linkedin} target="_blank">
-                  <LinkedInIcon className="text-amber-50" />
-                </IconButton>
-                <IconButton href={facebook} target="_blank">
-                  <FacebookIcon className="text-amber-50" />
-                </IconButton>
-              </div>
-            </div>
-          </div>
-          <div>
-            <p className="text-white text-center text-[12px]">
-              © {new Date().getFullYear()} KineTown. All rights reserved.
-            </p>
-          </div>
-        </footer>
-      </div>
+      <Footer />
     </div>
   );
 }
