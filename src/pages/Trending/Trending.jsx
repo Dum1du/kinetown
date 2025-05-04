@@ -40,7 +40,7 @@ return (
       <div className="p-4">
         <h2 className="text-lg font-semibold text-gray-800">{movie.title}</h2>
         <p className="text-gray-600">{movie.release_date?.split("-")[0]}</p>
-        <p className="text-yellow-500 font-bold">⭐ {movie.vote_average}</p>
+        <p className="text-yellow-500 font-bold">⭐ {movie.vote_average.toFixed(1)}</p>
       </div>
     </div>
   ))}
