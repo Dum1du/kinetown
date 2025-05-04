@@ -25,6 +25,7 @@
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router": "^7.5.3",
     "react-tsparticles": "^2.12.2",
     "subgenfront": "file:",
     "tailwind-scrollbar": "^4.0.1",

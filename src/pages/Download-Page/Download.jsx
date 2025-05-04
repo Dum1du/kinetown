@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "@fontsource/playfair-display";
-import logo from "./assets/cowboyLogoTXT.png";
+import logo from "../../assets/cowboyLogoTXT.png";
 import "./App.css";
 import DownloadBtn from "./DownloadBtn";
-import { SpiningLoadingSmall, SpiningLoadingNormal } from "./SpiningLoading";
-import MovieSkel from "./MovieSkel";
+import {
+  SpiningLoadingSmall,
+  SpiningLoadingNormal,
+} from "../../SpiningLoading";
+import MovieSkel from "../../MovieSkel";
 import PirateBtn from "./PirateBtn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -14,6 +17,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { IconButton } from "@mui/material";
 import DriveBtn from "./DriveBtn";
 import "@fontsource/rubik-dirt";
+import { Link } from "react-router";
+import NavigationBar from "../../NavigationBar";
 
 const OMDB_URL = "https://www.omdbapi.com/";
 const OMBD_apiKey = import.meta.env.VITE_OMBD_API;
@@ -216,24 +221,8 @@ export default function SubtitleSearch() {
 
   return (
     <div className="flex flex-col min-h-screen w-auto ">
-      <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10">
-        <nav className=" h-13  sm:absolute sm:w-[100%] border-b-2 border-[#E4B165] mb-2 bg-mainColor w-screen flex items-center justify-left ">
-          <img src={logo} className="h-10 ml-15" />
-          <ul className="flex space-x-15 text-white text-sm sm:text-base ml-15">
-    <li>
-      <a href="#" className="hover:text-[#E4B165]">Home</a>
-    </li>
-    <li>
-      <a href="#" className="hover:text-[#E4B165]">Categories</a>
-    </li>
-    <li>
-      <a href="#" className="hover:text-[#E4B165]">Trending</a>
-    </li>
-    <li>
-      <a href="#" className="hover:text-[#E4B165]">About</a>
-    </li>
-  </ul>
-        </nav>
+      <div className="flex-25  selection:bg-cyan-200   px-4 flex flex-col items-center  w-[100%] bg-backgroundColor h-screen  pb-10 ">
+        <NavigationBar />
 
         <div className="z-1 h-55 flex slideshow mt-4 sm:mt-20 w-full max-w-2xl mx-auto overflow-hidden sm:max-w-[100%] sm:w-screen sm:h-55">
           {loadingRecent ? (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SpiningLoadingSmall } from "./SpiningLoading";
+import { SpiningLoadingSmall } from "../../SpiningLoading";
 
 function DriveBtn({ fileId, subtitleName }) {
   const [downloading, setDownloading] = useState(false);
