@@ -4,7 +4,7 @@
   --color-mainColor:#4B2E2B;
   --color-highlightColor:#E4B165;
 }
-.MuiSvgIcon-root:hover {
+.Download.MuiSvgIcon-root:hover {
   color: #e4b165;
   height: 30px;
   width: 30px;
