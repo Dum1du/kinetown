@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@theme {
+  --color-backgroundColor: #1c1c1c;
+  --color-mainColor:#4B2E2B;
+  --color-highlightColor:#E4B165;
+}
+.footer.MuiSvgIcon-root:hover {
+    color: #e4b165 !important;
+    height: 60px !important;
+    width: 60px !important;
+    transition: auto !important;
+  }
