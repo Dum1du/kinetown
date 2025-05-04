@@ -54,6 +54,12 @@ export default function SubtitleSearch() {
   const [recentMovie, setRecentMovie] = useState([]);
   const [loadingRecent, setLoadingRecent] = useState(false);
 
+  //guidelines
+  
+    const [showSyncGuide, setShowSyncGuide] = useState(false);
+  
+
+
   //mail navigation
   const handleMailClick = () => {
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(
@@ -395,7 +401,90 @@ export default function SubtitleSearch() {
               Recommend to download the suitable file for your video file type
             </p>
           )}
+      
+
+
+      
+          <div className="guide-container ">
+            <div className="bg-[#4B2E2B] text-white rounded-xl overflow-hidden shadow-xl w-full max-w-2xl mx-auto mt-[400px]">
+                <button 
+                    onClick={() => setShowSyncGuide(!showSyncGuide)}
+                    className="w-full py-2 px-4 flex justify-between items-bottom hover:bg-[#5a3a36] transition-colors "
+                  >
+                    <h2 className="text-[#E4B165] text-base font-normal tracking-wide mr-2">How to Fix Subtitle Sync Issues </h2>
+                    <span className="text-white text-lg">
+                      {showSyncGuide ? ' ▲' : ' ▼'}
+                    </span>
+                </button>
+                {showSyncGuide && (
+                  <div className="px-4 pb-4 bg-[#3a2523] text-sm space-y-4 mb-2">
+                    <div className="max-h-[20vh] overflow-y-auto invisible-scroll pb-6">
+                        <div className="text-sm space-y-2 pt-4"> 
+                          <p className="mb-3">Don't let out-of-sync subtitles ruin your experience! Adjust subtitle timing in just a few clicks: </p>
+                          <h3 className="text-[#E4B165] font-medium mb-2">Why Subtitles Go Out of Sync:</h3>
+                          <ul className="list-disc pl-5 space-y-1 mb-4">
+                              <li>Different video versions</li>
+                              <li>Player settings or playback speed issues</li>
+
+                          </ul>
+
+                          <div className="space-y-5">
+                            <div>
+                              <h3 className="text-[#E4B165] font-medium mb-2">KM Player (PC):</h3>
+                              <div className="space-y-2">
+                                <p><span className="font-medium">If subtitles are too fast:</span><br/>
+                                    - Press <kbd className="bg-[#2c1e1d] px-2 py-0.5 rounded">F1</kbd> or right-click → Subtitle → Subtitle Sync → Increase (+) value
+                                    </p>
+                                <p><span className="font-medium">If subtitles are too slow:</span><br/>
+                                    - Press <kbd className="bg-[#2c1e1d] px-2 py-0.5 rounded">F2</kbd> or right-click → Subtitle → Subtitle Sync → Decrease (-) value</p>
+                                <p>Reset to default: Press <kbd className="bg-[#2c1e1d] px-2 py-0.5 rounded">F3</kbd></p>
+                              </div>
+
+                            </div>
+
+                            <div>
+                            <h3 className="text-[#E4B165] font-medium mb-2">VLC Media Player (PC & Android):</h3>
+                              <div className="space-y-2">
+                                  <p><span className="font-medium">Delay subtitles (slow them down):</span><br/>
+                      - PC: Press <kbd className="bg-[#2c1e1d] px-2 py-0.5 rounded">G</kbd> or Subtitles → Subtitle Track → Increase Delay<br/>
+                      - Android: Tap menu → Subtitles → Subtitle Sync → Slide (+)</p>
+                                  <p><span className="font-medium">Speed up subtitles:</span><br/>
+                              - PC: Press <kbd className="bg-[#2c1e1d] px-2 py-0.5 rounded">H</kbd> or Subtitles → Subtitle Track → Decrease Delay<br/>
+                              - Android: Tap Menu → Subtitles → Subtitle Sync → Slide (-)</p>
+
+
+                              </div>
+                            
+
+                            </div>
+                            <div>
+                                <h3 className="text-[#E4B165] font-medium mb-2">MX Player (Android):</h3>
+                                <div className="space-y-2">
+                                    <p><span className="font-medium">Subtitles too fast:</span><br/>
+                                    - Tap <span className="text-[#E4B165]">⋮</span> → Subtitle → Subtitle Delay → Tap "+"</p>
+                                    <p><span className="font-medium">Subtitles too slow:</span><br/>
+                                        - Tap <span className="text-[#E4B165]">⋮</span> → Subtitle → Subtitle Delay → Tap "-"</p>
+                                    <p>Reset sync: Tap "Reset"</p>
+
+                                </div>
+
+                            </div>
+
+
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                )}         
+            </div>
+          </div>
+      
       </div>
+
+    
+      
+
+
 
       
       <div className="flex-0.5 footer flex  flex-col sm:flex-row">

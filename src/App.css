@@ -36,6 +36,55 @@
   background-position: center;
   background-size: 90% 94%;
 }
+/* Enhanced Dropdown Styles */
+.guidelines-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.guidelines-content.open {
+  max-height: 60vh; /* Changed from 1000px to viewport units */
+  overflow-y: auto; /* to scroll */
+  @apply custom-scroll; 
+}
+.scrollBar {
+  overflow: auto;
+}
+.scrollBar::-webkit-scrollbar {
+  width: 3px;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+  background-color: #e4b165;
+}
+.scrollBar::-webkit-scrollbar-track {
+  background-color: #4b2e2b;
+}
+
+
+
+.invisible-scroll::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.invisible-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Keyboard key styling */
+kbd {
+  font-family: monospace;
+  display: inline-block;
+  padding: 0.2em 0.4em;
+  margin: 0 0.1em;
+  border: 1px solid var(--color-highlightColor);
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  line-height: 1;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -82,6 +131,19 @@ h1 {
   .poster {
     animation: slide 20s linear infinite;
   }
+  .guidelines-content.open {
+    max-height: 1500px; 
+  }
+  
+  .guidelines-button {
+    padding: 0.75rem 1rem;
+  }
+  
+  .guidelines-content {
+    font-size: 0.9rem;
+  }
+
+  
   @keyframes slide {
     0% {
       transform: translateX(0);
