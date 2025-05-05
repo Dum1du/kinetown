@@ -54,7 +54,7 @@ function Trending() {
           <div
             key={movie.id}
 
-            className="cursor-pointer group bg-gray-200 rounded-2xl shadow-md overflow-hidden transform transition duration-150 scale-80 hover:scale-85 hover:bg-white">
+            className="cursor-pointer group bg-gray-200 rounded-2xl shadow-md overflow-hidden transform transition duration-80 scale-80 hover:scale-85 hover:bg-white">
             <img
               src={IMAGE_BASE_URL + movie.poster_path}
               alt={movie.title}
