@@ -75,7 +75,7 @@ function Footer() {
         </ul>
       </div>
       <div className="container">
-        <p className="text-muted flex items-center justify-center opacity-80 text-xs pt-5">
+        <p className="text-muted flex items-center justify-center opacity-80 text-xs pt-5 ml-17">
           Copyright © 2025, KineTown . All rights reserved
         </p>
       </div>
