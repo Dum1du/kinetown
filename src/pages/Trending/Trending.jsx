@@ -3,6 +3,7 @@ import "./Trending.css";
 import NavigationBar from "../../NavigationBar";
 import axios from "axios";
 import Footer from "../../footer";
+import SearchBar from "../../SearchBar";
 
 const API_KEY = "fa0e2bfacce6d94257e6692c20cc2ac7";
 const API_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`;
@@ -21,6 +22,7 @@ function Trending() {
   return (
     <div className="flex flex-col min-h-screen w-full bg-gray-900">
       <NavigationBar currentPage="trending" />
+      <SearchBar />
 
       <div className="text-center mt-10">
         <h1 className="text-4xl font-bold text-yellow-400 mb-2 mt-6">
