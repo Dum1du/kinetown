@@ -1,3 +1,5 @@
+import "./SearchBar.css";
+
 function SearchBar() {
   return (
     <div className="border-none max-w-full items-center justify-center flex flex-col mt-20">
