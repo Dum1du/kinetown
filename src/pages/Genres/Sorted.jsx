@@ -79,7 +79,7 @@ function Sorted() {
     >
       <NavigationBar />
       <SearchBar />
-      <div className="action-movies mt-8">
+      <div className="action-movies my-8 mx-auto">
         <h1 className="text-highlightColor text-4xl">Popular {genre} Movies</h1>
         <hr className="text-highlightColor mb-4" />
         <h1 className="text-white text-2xl flex justify-center">#{page}</h1>
