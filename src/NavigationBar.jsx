@@ -3,7 +3,17 @@ import logo from "./assets/cowboyLogoTXT.png";
 import { Link } from "react-router";
 
 //add genres if needed
-const genres = ["Action", "Comody", "Drama", "Horror", "Romantic"];
+const genres = [
+  "Action",
+  "Adventure",
+  "Animation",
+  "Comedy",
+  "Crime",
+  "Documentary",
+  "Drama",
+  "Horror",
+  "Sci-Fi",
+];
 
 function NavigationBar({ currentPage }) {
   return (
@@ -18,9 +28,9 @@ function NavigationBar({ currentPage }) {
           }}
           className="px-7 h-12 py-3"
         >
-          <Link to="/" className="hover:text-[#E4B165]">
+          <a href="/" className="hover:text-[#E4B165]">
             Home
-          </Link>
+          </a>
         </li>
 
         <li className="relative group">
@@ -31,14 +41,14 @@ function NavigationBar({ currentPage }) {
           <div className="absolute top-full left-0 bg-[#4B2E2B] text-white rounded shadow-lg z-10 w-33 opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none transition-opacity duration-200">
             <ul className="flex flex-col">
               {genres.map((genre) => (
-                <Link to={`/categories/${genre}`}>
+                <a href={`/categories/${genre}`}>
                   <li
                     key={genre}
                     className="block px-4 py-2 hover:bg-[#E4B165] hover:text-black w-33 hover:cursor-pointer"
                   >
                     {genre}
                   </li>
-                </Link>
+                </a>
               ))}
             </ul>
           </div>
