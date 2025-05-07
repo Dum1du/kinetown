@@ -31,12 +31,14 @@ function NavigationBar({ currentPage }) {
           <div className="absolute top-full left-0 bg-[#4B2E2B] text-white rounded shadow-lg z-10 w-33 opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none transition-opacity duration-200">
             <ul className="flex flex-col">
               {genres.map((genre) => (
-                <li
-                  key={genre}
-                  className="block px-4 py-2 hover:bg-[#E4B165] hover:text-black"
-                >
-                  <Link to={`/categories/${genre}`}>{genre}</Link>
-                </li>
+                <Link to={`/categories/${genre}`}>
+                  <li
+                    key={genre}
+                    className="block px-4 py-2 hover:bg-[#E4B165] hover:text-black w-33 hover:cursor-pointer"
+                  >
+                    {genre}
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>
