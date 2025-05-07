@@ -8,7 +8,7 @@ function About() {
     <div className="flex flex-col min-h-screen w-full bg-gray-50">
       <NavigationBar currentPage="about" />
       {/*Section 1 */}
-      <section className="flex justify-center px-10 py-16 bg-black text-center mt-10">
+      <section className="flex justify-center px-10 py-16 bg-backgroundColor text-center mt-10">
         <div className="max-w-xl flex flex-col items-center">
           {/* Logo */}
           <div className="w-[300px] mb-8">
@@ -20,7 +20,7 @@ function About() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-4xl font-bold mb-4 text-[#4E2E2b]">
+          <h2 className="text-4xl font-bold mb-4 text-[#7e5653]">
             What We Do{" "}
           </h2>
 
@@ -35,24 +35,24 @@ function About() {
         </div>
         {/*Section 2 */}
       </section>
-      <section className="flex flex-col lg:flex-row justify-between px-10 py-16 bg-black">
+      <section className="flex flex-col lg:flex-row justify-between px-10 py-16 bg-backgroundColor lg:gap-x-10 ">    
         {/*Vision */}
-        <div className="lg:w-1/2 p-5">
-          <h2 className="text-4xl font-bold mb-4 text-[#4E2E2b] mt-3">
+        <div className="lg:w-1/2 p-5 bg-black/50 backdrop-blur-sm rounded-xl shadow-md  text-center mb-6 lg:mb-0">
+          <h2 className="text-4xl font-bold mb-4 text-[#7e5653] pb-6">
             Our Vision
           </h2>
-          <p className="text-[#E4B165] text-lg">
+          <p className="text-[#E4B165] text-lg pb-3">
             To become the leading platform for seamless subtitle creation,
             bridging communication gaps and making video content universally
             understandable.
           </p>
         </div>
         {/*Mission */}
-        <div className="lg:w-1/2 p-5">
-          <h2 className="text-4xl font-bold mb-4 text-[#4E2E2b] mt-3">
+        <div className="lg:w-1/2 p-5 bg-black/50 backdrop-blur-sm rounded-xl shadow-md  text-center">
+          <h2 className="text-4xl font-bold mb-4 text-[#7e5653] pb-6">
             Our Mission
           </h2>
-          <p className="text-[#E4B165] text-lg">
+          <p className="text-[#E4B165] text-lg pb-3">
             Our mission is to empower creators with easy-to-use tools that
             deliver high-quality subtitles, promoting accessibility,
             inclusivity, and global reach for every piece of video content.
@@ -61,8 +61,8 @@ function About() {
       </section>
 
       {/* Section 3 Team Members */}
-      <section className="flex flex-col items-center justify-center min-h-screen w-full bg-black text-[#4E2E2b] px-4 py-20">
-        <h1 className="text-4xl font-bold  text-[#4E2E2b]  mb-40">
+      <section className="flex flex-col items-center justify-center  w-full bg-backgroundColor text-[#4E2E2b] px-4 py-20">
+        <h1 className="text-4xl font-bold  text-[#7e5653]  mb-10">
           Meet Our Team
         </h1>
 
@@ -123,14 +123,14 @@ function About() {
         </div>
       </section>
       {/*Section 3 */}
-      <section className="flex flex-col items-center justify-center px-10 py-16 bg-black text-center space-y-6">
+      <section className="flex flex-col items-center justify-center px-10 py-16 bg-backgroundColor text-center space-y-6 ">
         {/* Logo */}
         <div className="w-[300px]">
-          <img src="./logo-without-bg.png" alt="Logo" className="w-full" />
+          <img src="./logo-without-bg.png" alt="Logo" className="w-full " />
         </div>
-
+      <section className=" bg-black/50 backdrop-blur-sm rounded-xl shadow-md px-8 py-8">
         {/* Note */}
-        <h1 className="text-red-600">Note!</h1>
+        <h1 className="text-red-600 mb-8">Note!</h1>
         <p className="text-[#E4B165] text-lg max-w-xl">
           "Subtitles are aggregated from external sources and enhanced through
           automated translation. While optimized for accuracy, they may contain
@@ -141,6 +141,8 @@ function About() {
           © 2025 KineTown. All rights reserved.
         </p>
       </section>
+      </section>
+      <Footer />
     </div>
   );
 }

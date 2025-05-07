@@ -38,25 +38,26 @@ function Trending() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen w-full bg-backgroundColor bg-cover">
+    <div className="flex flex-col min-h-screen w-full bg-backgroundColor bg-cover ">
       <NavigationBar currentPage="trending" />
       <SearchBar />
 
       <div className="text-center mt-10">
         <h1 className="text-4xl font-bold text-yellow-400 mb-2 mt-6">TMDB Top-Rated Movies</h1>
-        <p className="text-gray-100">Most loved movies of all time</p>
+        <p className="text-gray-100">Most loved movies of all time{" "}
+        <span className="inline-block animate-bounce">⭐</span></p>
 
 
   
 
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1 px-4 lg:px-24">
         {movies.map((movie) => (
           <div
             key={movie.id}
 
-            className="cursor-pointer group bg-gray-200 rounded-2xl shadow-md overflow-hidden transform transition duration-80 scale-80 hover:scale-85 hover:bg-white">
+            className="cursor-pointer group bg-gray-200 rounded-2xl shadow-md overflow-hidden transform transition duration-150 scale-80 hover:scale-85 hover:bg-white">
             <img
               src={IMAGE_BASE_URL + movie.poster_path}
               alt={movie.title}
