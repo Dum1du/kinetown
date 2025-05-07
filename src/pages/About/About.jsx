@@ -31,7 +31,9 @@ function About() {
       <section className="flex flex-col lg:flex-row justify-between px-10 py-16 bg-backgroundColor">
         {/* Vision */}
         <div className="lg:w-1/2 p-5">
-          <h2 className="text-4xl font-bold mb-4 text-[#4E2E2b] mt-3">Our Vision</h2>
+          <h2 className="text-4xl font-bold mb-4 text-[#4E2E2b] mt-3">
+            Our Vision
+          </h2>
           <p className="text-[#E4B165] text-lg">
             To become the leading platform for seamless subtitle creation, bridging communication gaps and making video content universally understandable.
           </p>
@@ -39,7 +41,9 @@ function About() {
 
         {/* Mission */}
         <div className="lg:w-1/2 p-5">
-          <h2 className="text-4xl font-bold mb-4 text-[#4E2E2b] mt-3">Our Mission</h2>
+          <h2 className="text-4xl font-bold mb-4 text-[#4E2E2b] mt-3">
+            Our Mission
+          </h2>
           <p className="text-[#E4B165] text-lg">
             Our mission is to empower creators with easy-to-use tools that deliver high-quality subtitles, promoting accessibility, inclusivity, and global reach for every piece of video content.
           </p>
