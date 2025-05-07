@@ -3,6 +3,7 @@ import "./Trending.css";
 import NavigationBar from "../../NavigationBar";
 import axios from "axios";
 import Footer from "../../footer";
+import SearchBar from "../../SearchBar";
 
 
 const API_KEY = "fa0e2bfacce6d94257e6692c20cc2ac7";
@@ -39,6 +40,7 @@ function Trending() {
   return (
     <div className="flex flex-col min-h-screen w-full bg-backgroundColor bg-cover">
       <NavigationBar currentPage="trending" />
+      <SearchBar />
 
       <div className="text-center mt-10">
         <h1 className="text-4xl font-bold text-yellow-400 mb-2 mt-6">TMDB Top-Rated Movies</h1>
