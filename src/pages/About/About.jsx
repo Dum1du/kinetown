@@ -84,7 +84,7 @@ function About() {
               name: "Naveen Oshada",
               role: "Software Engineer",
               desc: "With strong backend expertise, Naveen architected the system’s core logic and database integrations for speed and reliability.",
-              image: "./src/assets/naveenpic.jpehg"
+              image: "./src/assets/naveenpic.jpeg"
             },
             {
               name: "Asitha Wijerathana",
