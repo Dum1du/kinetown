@@ -75,10 +75,10 @@ function Sorted() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col h-fit w-auto bg-backgroundColor overflow-y-auto"
+      className="flex flex-col min-h-screen w-screen bg-backgroundColor overflow-y-auto"
     >
       <NavigationBar />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <div className="action-movies my-8 mx-auto">
         <h1 className="text-highlightColor text-4xl">Popular {genre} Movies</h1>
         <hr className="text-highlightColor mb-4" />
@@ -133,7 +133,7 @@ function Sorted() {
           </button>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
