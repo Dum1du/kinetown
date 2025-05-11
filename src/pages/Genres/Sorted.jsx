@@ -80,9 +80,15 @@ function Sorted() {
       <NavigationBar />
       <SearchBar />
       <div className="action-movies my-8 mx-auto">
-        <h1 className="text-highlightColor text-4xl">Popular {genre} Movies</h1>
+        <div className="flex justify-between pr-6">
+          <h1 className="text-highlightColor sm:text-4xl">
+            Popular {genre} Movies
+          </h1>
+          <h1 className="text-white sm:text-2xl flex justify-center">
+            #{page}
+          </h1>
+        </div>
         <hr className="text-highlightColor mb-4" />
-        <h1 className="text-white text-2xl flex justify-center">#{page}</h1>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
           {movies.map((movie) => (
