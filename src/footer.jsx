@@ -50,32 +50,32 @@ function Footer() {
         <ul className="social-icons flex flex-row items-center justify-center opacity-80 py-2">
           <li className="x px-3">
             <XIcon
-              className="transition-all duration-300 hover:scale-120"
+              className="transition-all duration-300 hover:scale-120 cursor-pointer"
               sx={{ fontSize: "40px", margin: "0 4px", color: "#e4b165" }}
             />
           </li>
           <li className="Facebook px-3">
             <FacebookIcon
-              className="transition-all duration-300 hover:scale-120"
+              className="transition-all duration-300 hover:scale-120 cursor-pointer"
               sx={{ fontSize: "40px", margin: "0 4px", color: "#e4b165" }}
             />
           </li>
           <li className="telegram px-3">
             <TelegramIcon
-              className="transition-all duration-300 hover:scale-120"
+              className="transition-all duration-300 hover:scale-120 cursor-pointer"
               sx={{ fontSize: "40px", margin: "0 4px", color: "#e4b165" }}
             />
           </li>
           <li className="Github px-3">
             <GitHubIcon
-              className="transition-all duration-300 hover:scale-120"
+              className="transition-all duration-300 hover:scale-120 cursor-pointer"
               sx={{ fontSize: "40px", margin: "0 4px", color: "#e4b165" }}
             />
           </li>
         </ul>
       </div>
       <div className="container">
-        <p className="text-muted flex items-center justify-center opacity-80 text-xs pt-5">
+        <p className="text-muted flex items-center justify-center opacity-80 text-xs pt-5 ml-17">
           Copyright © 2025, KineTown . All rights reserved
         </p>
       </div>
