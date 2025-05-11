@@ -75,14 +75,20 @@ function Sorted() {
   return (
     <div
       ref={containerRef}
-      className="flex flex-col h-fit w-auto bg-backgroundColor overflow-y-auto"
+      className="flex flex-col min-h-screen w-screen bg-backgroundColor overflow-y-auto"
     >
       <NavigationBar />
       <SearchBar />
       <div className="action-movies my-8 mx-auto">
-        <h1 className="text-highlightColor text-4xl">Popular {genre} Movies</h1>
+        <div className="flex justify-between pr-6">
+          <h1 className="text-highlightColor sm:text-4xl">
+            Popular {genre} Movies
+          </h1>
+          <h1 className="text-white sm:text-2xl flex justify-center">
+            #{page}
+          </h1>
+        </div>
         <hr className="text-highlightColor mb-4" />
-        <h1 className="text-white text-2xl flex justify-center">#{page}</h1>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
           {movies.map((movie) => (
@@ -94,7 +100,7 @@ function Sorted() {
                 <img
                   src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                   alt={movie.title}
-                  className="w-80 h-80 object-cover transition duration-300 group-hover:brightness-50"
+                  className="w-80 sm:h-80 object-cover transition duration-300 group-hover:brightness-50"
                 />
               )}
               <div className="movie-info">
