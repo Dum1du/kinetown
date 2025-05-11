@@ -100,7 +100,7 @@ function Sorted() {
                 <img
                   src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                   alt={movie.title}
-                  className="w-80 h-80 object-cover transition duration-300 group-hover:brightness-50"
+                  className="w-80 sm:h-80 object-cover transition duration-300 group-hover:brightness-50"
                 />
               )}
               <div className="movie-info">
