@@ -423,7 +423,7 @@ export default function SubtitleSearch() {
                 </button>
                 {showSyncGuide && (
                   <div className="px-4 pb-4 bg-[#3a2523] text-sm space-y-4 mb-2">
-                    <div className="max-h-[20vh] overflow-y-auto invisible-scroll pb-6">
+                    
                         <div className="text-sm space-y-2 pt-4"> 
                           <p className="mb-3">Don't let out-of-sync subtitles ruin your experience! Adjust subtitle timing in just a few clicks: </p>
                           <h3 className="text-[#E4B165] font-medium mb-2">Why Subtitles Go Out of Sync:</h3>
@@ -478,7 +478,7 @@ export default function SubtitleSearch() {
 
                           </div>
                         </div>
-                    </div>
+                    
                   </div>
                 )}         
             </div>
