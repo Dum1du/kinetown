@@ -65,8 +65,8 @@ function Home() {
       <NavigationBar currentPage="home" />
       <SearchBar />
 
-      <div className="flex-grow px-4 sm:px-6 lg:px-8 py-8">
-        <div className="max-w-7xl mx-auto">
+      <div className=" flex-grow px-4 w-auto py-8">
+        <div className="action-movies max-w-7xl mx-auto">
           <h1 className="text-highlightColor text-3xl md:text-4xl mb-4">
             Latest Movies
           </h1>
@@ -78,15 +78,15 @@ function Home() {
             </div>
           ) : (
             <>
-              {/* <h2 className="text-white text-xl md:text-2xl text-center mb-6">
+              <h2 className="text-white text-xl md:text-2xl text-center mb-6">
                 #{page}
-              </h2> */}
+              </h2>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
+              <div className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
                 {movies.map((movie) => (
                   <div
                     key={movie.id}
-                    className="cursor-pointer group bg-gray-800 rounded-2xl shadow-md overflow-hidden transform transition duration-150 scale-80 hover:scale-85"
+                    className="cursor-pointer group bg-neutral-700 rounded-2xl shadow-md overflow-hidden transform transition duration-150 scale-80 hover:scale-85 hover:bg-neutral-800"
                   >
                     {movie.poster_path ? (
                       <img
