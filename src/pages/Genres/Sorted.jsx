@@ -94,7 +94,7 @@ function Sorted() {
           {movies.map((movie) => (
             <div
               key={movie.id}
-              className="cursor-pointer group bg-gray-200 rounded-2xl shadow-md overflow-hidden transform transition duration-150 scale-80 hover:scale-85 hover:bg-white"
+              className="cursor-pointer group bg-neutral-700 rounded-2xl shadow-md overflow-hidden transform transition duration-150 scale-80 hover:scale-85 hover:bg-neutral-800"
             >
               {movie.poster_path && (
                 <img
@@ -104,13 +104,13 @@ function Sorted() {
                 />
               )}
               <div className="movie-info">
-                <h3 className="text-lg font-semibold text-gray-800">
+                <h3 className="text-lg font-semibold text-white">
                   {movie.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-400">
                   Release: {movie.release_date?.split("-")[0]}
                 </p>
-                <p className="text-yellow-500 font-bold">
+                <p className="text-yellow-400 font-bold">
                   ⭐ {movie.vote_average.toFixed(1)}
                 </p>
               </div>
