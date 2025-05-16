@@ -78,21 +78,21 @@ function Home() {
             </div>
           ) : (
             <>
-              <h2 className="text-white text-xl md:text-2xl text-center mb-6">
+              {/* <h2 className="text-white text-xl md:text-2xl text-center mb-6">
                 #{page}
-              </h2>
+              </h2> */}
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-1">
                 {movies.map((movie) => (
                   <div
                     key={movie.id}
-                    className="cursor-pointer group bg-gray-800 rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl hover:translate-y-1"
+                    className="cursor-pointer group bg-gray-800 rounded-2xl shadow-md overflow-hidden transform transition duration-150 scale-80 hover:scale-85"
                   >
                     {movie.poster_path ? (
                       <img
                         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                         alt={movie.title}
-                        className="w-full h-80 object-cover transition duration-300 group-hover:opacity-80"
+                        className="w-80 sm:h-80 object-cover transition duration-300 group-hover:brightness-50"
                         loading="lazy"
                       />
                     ) : (
