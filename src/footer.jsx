@@ -33,9 +33,9 @@ function Footer() {
       <div className="flex justify-center items-center opacity-70 visible sm:invisible">
         <hr className=" h-3 w-[50%] text-highlightColor" />
       </div>
-      <div className="flex sm:flex-col items-center justify-around ">
+      <div className="flex flex-col items-center justify-around ">
         <div className="faq">
-          <ul className="faq flex  flex-col sm:flex-row sm:items-center justify-center opacity-80 py-2">
+          <ul className="faq flex   sm:flex-row sm:items-center justify-center opacity-80 py-2">
             <li className="FAQ sm:px-10 font-bold cursor-pointer transition-all duration-300 hover:text-amber-300 hover:text-shadow-glow">
               <CircleIcon
                 className="sm:invisible visible"
@@ -68,7 +68,7 @@ function Footer() {
           </ul>
         </div>
         <div className="social">
-          <ul className="social-icons grid grid-cols-2 gap-2 sm:gap-0 sm:flex flex-row items-center justify-center opacity-80 py-2 w-auto">
+          <ul className="social-icons  sm:flex flex items-center justify-center opacity-80 py-2 w-auto">
             <li className="x px-3">
               <XIcon
                 className="transition-all duration-300 hover:scale-120 cursor-pointer"
