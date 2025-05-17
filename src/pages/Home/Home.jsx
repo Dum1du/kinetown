@@ -120,7 +120,7 @@ function Home() {
                 ))}
               </div>
 
-              <div className="flex justify-center items-center mt-8 space-x-4">
+              <div className="pagination flex justify-center items-center mt-8 space-x-4">
                 <button
                   onClick={() => {
                     setPage((p) => Math.max(1, p - 1));
