@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Sorted />,
   },
   {
-    path: "/download",
+    path: "/download/:id",
     element: <App />,
   },
   {
