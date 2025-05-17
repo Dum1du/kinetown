@@ -19,7 +19,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { IconButton } from "@mui/material";
 import DriveBtn from "./DriveBtn";
 import "@fontsource/rubik-dirt";
-import { Link } from "react-router";
+import { Link, useLocation, useParams } from "react-router";
 import NavigationBar from "../../NavigationBar";
 
 const OMDB_URL = "https://www.omdbapi.com/";
@@ -56,6 +56,8 @@ export default function SubtitleSearch() {
   const [resultLoadig, setResultLoading] = useState(false);
   const [downloadType, setDownloadType] = useState(null);
   const [activeBtn, setActiveBtn] = useState(null);
+
+  const { state } = useLocation();
 
   //recent movies
   const [recentMovie, setRecentMovie] = useState([]);
@@ -125,6 +127,7 @@ export default function SubtitleSearch() {
       }
     };
     fetchRecentMovies();
+    handleSearch(state.name + " " + state.year);
   }, []);
 
   const suggestionClick = (suggestion) => {
@@ -132,17 +135,20 @@ export default function SubtitleSearch() {
     setSuggestions([]);
   };
   const slideItemClick = (movie) => {
-    setQuery(`${movie.title} ${movie.release_date.substring(0, 4)}`);
+    // setQuery(`${state.name} ${state.year}`);
   };
 
   const handleSearch = async (customQuery) => {
+    console.log(`CustomQuery is ${customQuery} Handle search clicked`);
     setSuggestions([]);
     const searchItem = customQuery || query;
     if (!searchItem) {
       setError("Please enter a movie title");
       setTimeout(() => setError(null), 700);
+      console.log("search item null");
       return;
     }
+    console.log(`Search item filled ${searchItem}`);
     setResultLoading(true);
 
     window.scrollBy({ top: 100, behavior: "smooth" });
@@ -150,8 +156,8 @@ export default function SubtitleSearch() {
     try {
       // Step 1: Fetch from your backend
       const response = await axios.get(
-        searchEndPoint, //production
-        // "http://localhost:5002/search",
+        // searchEndPoint, //production
+        "http://localhost:5002/search",
         {
           params: { query: searchItem },
         }

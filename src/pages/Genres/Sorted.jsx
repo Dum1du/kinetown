@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Sorting.css";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import NavigationBar from "../../NavigationBar";
 import Footer from "../../footer";
 import SearchBar from "../../SearchBar";
@@ -20,10 +20,13 @@ function Sorted() {
     "Sci-Fi": 878,
   };
   const [movies, setMovies] = useState([]);
+  const [movieName, setMovieName] = useState();
+  const [movieYear, setMovieYear] = useState();
   const [error, setError] = useState();
   const [page, setPage] = useState(1);
   const { genre } = useParams();
   const genID = genreChecks[genre];
+  const navigate = useNavigate();
 
   const containerRef = useRef();
 
@@ -46,6 +49,15 @@ function Sorted() {
       // Fallback to instant scroll
       window.scrollTo(0, 0);
     }
+  };
+
+  const movieClicked = (movie) => {
+    navigate(`/download/${movie.id}`, {
+      state: {
+        name: movie.title,
+        year: movie.release_date?.split("-")[0],
+      },
+    });
   };
 
   useEffect(() => {
@@ -95,6 +107,7 @@ function Sorted() {
             <div
               key={movie.id}
               className="cursor-pointer group bg-neutral-700 rounded-2xl shadow-md overflow-hidden transform transition duration-150 scale-80 hover:scale-85 hover:bg-neutral-800"
+              onClick={() => movieClicked(movie)}
             >
               {movie.poster_path && (
                 <img
