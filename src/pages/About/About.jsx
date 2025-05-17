@@ -104,28 +104,24 @@ function About() {
             },
           ].map((member, i) => (
             <div
-              key={i}
-              className="relative group/crew cursor-pointer transition-all duration-500"
-            >
-              {/* Image Border and Hover Effects */}
-              <div className="group-hover:blur-sm group-hover:brightness-75 group-hover:scale-95 transition-all duration-500 group-hover/crew:blur-none group-hover/crew:brightness-100 group-hover/crew:scale-110">
-                <div className="group relative w-44 h-44 mx-auto">
-                  <div className="rainbow-border-wrapper group-hover:animate-spin-to-cursor w-full h-full rounded-full p-[3px] bg-[conic-gradient(from_0deg_at_50%_50%,red,orange,yellow,green,blue,indigo,violet,red)]">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full rounded-full object-cover bg-white"
-                    />
-                  </div>
-                </div>
-              </div>
-              {/* Description */}
-              <div className="absolute z-10 bottom-[-140px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover/crew:opacity-100 transition-all duration-500 bg-yellow-900 text-white px-6 py-4 rounded-lg w-72 shadow-xl">
-                <p className="font-bold text-xl">{member.name}</p>
-                <p className="text-md">{member.role}</p>
-                <p className="mt-2 text-sm">{member.desc}</p>
-              </div>
-            </div>
+  key={i}
+  className="relative group/crew cursor-pointer transition-all duration-500"
+>
+  <div className="group-hover:blur-sm group-hover:brightness-75 group-hover:scale-95 transition-all duration-500 group-hover/crew:blur-none group-hover/crew:brightness-100 group-hover/crew:scale-110">
+    <div className="relative w-44 h-44 mx-auto">
+      <div className="rainbow-border-wrapper w-full h-full">
+        <img src={member.image} alt={member.name} />
+      </div>
+    </div>
+  </div>
+
+  {/* Description */}
+  <div className="absolute z-10 bottom-[-140px] left-1/2 transform -translate-x-1/2 opacity-0 group-hover/crew:opacity-100 transition-all duration-500 bg-yellow-900 text-white px-6 py-4 rounded-lg w-72 shadow-xl">
+    <p className="font-bold text-xl">{member.name}</p>
+    <p className="text-md">{member.role}</p>
+    <p className="mt-2 text-sm">{member.desc}</p>
+  </div>
+</div>
           ))}
         </div>
       </section>
