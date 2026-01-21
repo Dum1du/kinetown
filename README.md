@@ -1,6 +1,9 @@
 # 🎬 KineTown – Subtitle Companion App
 
-**KineTown** is a smart web app that helps users find and download movie subtitles into Sinhala. No need to wait for uploads, subtitles are instantly available for download.
+# KineTown
+
+KineTown is a smart web application that automatically scrapes movie subtitles from multiple sources, processes and converts subtitle files, and allows users to download Sinhala subtitles instantly. Built with Node.js, Puppeteer, and React, it focuses on web scraping, automation, and real-time subtitle processing.
+
 
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
